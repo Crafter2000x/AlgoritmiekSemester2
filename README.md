@@ -1,3 +1,3 @@
-# Algortimiek Semester 2
+# Algoritmiek Semester 2
 
-Hier bewaar ik alle projecten voor de algoritmiek oefeningen
+Hier bewaar ik alle projecten voor de algortimiek oefeningen
