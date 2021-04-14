@@ -46,6 +46,7 @@ namespace Circustrein
             this.ListViewAnimal = new System.Windows.Forms.ListView();
             this.OrderAnimals = new System.Windows.Forms.Button();
             this.TrainList = new System.Windows.Forms.RichTextBox();
+            this.ClearAll = new System.Windows.Forms.Button();
             this.AnimalAdd.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -255,6 +256,18 @@ namespace Circustrein
             this.TrainList.TabIndex = 3;
             this.TrainList.Text = "";
             // 
+            // ClearAll
+            // 
+            this.ClearAll.BackColor = System.Drawing.SystemColors.Control;
+            this.ClearAll.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ClearAll.Location = new System.Drawing.Point(723, 614);
+            this.ClearAll.Name = "ClearAll";
+            this.ClearAll.Size = new System.Drawing.Size(169, 51);
+            this.ClearAll.TabIndex = 4;
+            this.ClearAll.Text = "Clear all";
+            this.ClearAll.UseVisualStyleBackColor = false;
+            this.ClearAll.Click += new System.EventHandler(this.ClearAll_Click);
+            // 
             // Circustrein
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -262,6 +275,7 @@ namespace Circustrein
             this.AutoScrollMargin = new System.Drawing.Size(10, 0);
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1260, 677);
+            this.Controls.Add(this.ClearAll);
             this.Controls.Add(this.TrainList);
             this.Controls.Add(this.OrderAnimals);
             this.Controls.Add(this.ListViewAnimal);
@@ -299,6 +313,7 @@ namespace Circustrein
         private System.Windows.Forms.ListView ListViewAnimal;
         private System.Windows.Forms.Button OrderAnimals;
         private System.Windows.Forms.RichTextBox TrainList;
+        private System.Windows.Forms.Button ClearAll;
     }
 }
 

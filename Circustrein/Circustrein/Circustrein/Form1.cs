@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Circustrein.Classes;
 using System.Windows.Forms;
 
@@ -7,9 +6,7 @@ namespace Circustrein
 {
     public partial class Circustrein : Form
     {
-        public List<Animal> Animals = new List<Animal>();
-        public List<Wagon> Train = new List<Wagon>();
-        private bool DoubleBreak;
+        AnimalSorting AnimalSorting = new AnimalSorting();
 
         public Circustrein()
         {
@@ -23,20 +20,17 @@ namespace Circustrein
 
         private void OrderAnimals_Click(object sender, EventArgs e)
         {
-            OrderIntoCarts();
+            TrainList.Clear();
+            AnimalSorting.OrderIntoCarts();
+            DisplayTrain();
         }
 
-        private void AddAnimalToList() 
+        private void ClearAll_Click(object sender, EventArgs e)
         {
-            Animals.Add(new Animal
-            {
-                Name = AnimailAddName.Text,
-                Diet = GetDiet(),
-                Size = GetSize()
-               
-            });
-            Animals[Animals.Count - 1].SpaceAssign();
-            ListViewAnimal.Items.Add(Animals[Animals.Count -1].Name);
+            AnimalSorting.Animals.Clear();
+            AnimalSorting.Train.Clear();
+            TrainList.Clear();
+            ListViewAnimal.Clear();
         }
 
         private Animal.DietTypes GetDiet() 
@@ -67,159 +61,23 @@ namespace Circustrein
             }
         }
 
-        private void OrderIntoCarts() 
+        private void AddAnimalToList()
         {
-            Train.Clear();
-            TrainList.Clear();
-            Animals.Sort((x, y) => x.Space.CompareTo(y.Space));
-
-            foreach (Animal animal in Animals)
+            AnimalSorting.Animals.Add(new Animal
             {
-                // Are there any wagons?
-                if (Train.Count == 0)
-                {
-                    // Add a new wagon
-                    Train.Add(new Wagon());
-                    // Add animal to new wagon
-                    Train[0].StoredAnimals.Add(animal);
-                    Train[0].CurrentSize += animal.Space;
-                    continue;
-                }
+                Name = AnimailAddName.Text,
+                Diet = GetDiet(),
+                Size = GetSize()
 
-                foreach (Wagon wagon in Train)
-                {
-                    // Does the animal fit?
-                    if (wagon.CurrentSize + animal.Space > wagon.MaxSize)
-                    {
-                        // Any wagons left?
-                        if (Train[Train.Count -1] == wagon)
-                        {
-                            // Add a new wagon
-                            Train.Add(new Wagon());
-                            // Add animal to new wagon
-                            Train[Train.Count -1].StoredAnimals.Add(animal);
-                            Train[Train.Count - 1].CurrentSize += animal.Space;
-                            break;
-                        }
-                        else
-                        {
-                            //Select next wagon
-                            continue;
-                        }
-                    }
-
-                    // Is this animal a meat eater?
-                    if (animal.Diet == Animal.DietTypes.Carnivore)
-                    {
-                        foreach (Animal Storedanimal in wagon.StoredAnimals) 
-                        {
-                            // Does the wagon have a animal equal or smaller?
-                            if ((int)Storedanimal.Size <= (int)animal.Size)
-                            {
-                                // Any wagons left?
-                                if (Train[Train.Count - 1] == wagon)
-                                {
-                                    // Add a new wagon
-                                    Train.Add(new Wagon());
-                                    // Add animal to new wagon
-                                    Train[Train.Count - 1].StoredAnimals.Add(animal);
-                                    Train[Train.Count - 1].CurrentSize += animal.Space;
-
-                                    DoubleBreak = true;
-                                    break;
-                                }
-                                else
-                                {
-                                    //Select next wagon
-                                    break;
-                                }
-                            }
-
-                            // Does the cart have a animal equal or bigger that eats meat?
-                            if ((int)Storedanimal.Size >= (int)animal.Size && Storedanimal.Diet == Animal.DietTypes.Carnivore)
-                            {
-                                // Any wagons left?
-                                if (Train[Train.Count - 1] == wagon)
-                                {
-                                    // Add a new wagon
-                                    Train.Add(new Wagon());
-                                    // Add animal to new wagon
-                                    Train[Train.Count - 1].StoredAnimals.Add(animal);
-                                    Train[Train.Count - 1].CurrentSize += animal.Space;
-
-                                    DoubleBreak = true;
-                                    break;
-                                }
-                                else
-                                {
-                                    //Select next wagon
-                                    break;
-                                }
-                            }
-
-                            // Add animal to wagon
-                            wagon.StoredAnimals.Add(animal);
-                            wagon.CurrentSize += animal.Space;
-                            DoubleBreak = true;
-                            break;
-                        }
-
-                        if (DoubleBreak == true)
-                        {
-                            DoubleBreak = false;
-                            break;
-                        }
-                    }
-                    else if (animal.Diet != Animal.DietTypes.Carnivore)
-                    {
-                        foreach (Animal Storedanimal in wagon.StoredAnimals)
-                        {
-                            // Does the cart have a animal equal or bigger that eats meat?
-                            if ((int)Storedanimal.Size >= (int)animal.Size && Storedanimal.Diet == Animal.DietTypes.Carnivore)
-                            {
-                                // Any wagons left?
-                                if (Train[Train.Count - 1] == wagon)
-                                {
-                                    // Add a new wagon
-                                    Train.Add(new Wagon());
-                                    // Add animal to new wagon
-                                    Train[Train.Count - 1].StoredAnimals.Add(animal);
-                                    Train[Train.Count - 1].CurrentSize += animal.Space;
-
-                                    DoubleBreak = true;
-                                    break;
-                                }
-                                else
-                                {
-                                    //Select next wagon
-                                    break;
-                                }
-                            }
-
-                            // Add animal to wagon
-                            wagon.StoredAnimals.Add(animal);
-                            wagon.CurrentSize += animal.Space;
-
-                            DoubleBreak = true;
-                            break;
-                        }
-
-                        if (DoubleBreak == true)
-                        {
-                            DoubleBreak = false;
-                            break;
-                        }
-                    }
-                }
-            }
-
-            DisplayTrain();
+            });
+            AnimalSorting.Animals[AnimalSorting.Animals.Count - 1].SpaceAssign();
+            ListViewAnimal.Items.Add(AnimalSorting.Animals[AnimalSorting.Animals.Count - 1].Name);
         }
 
         private void DisplayTrain() 
         {
             int counter = 1;
-            foreach (Wagon wagon in Train)
+            foreach (Wagon wagon in AnimalSorting.Train)
             {
                 TrainList.Text += "Wagon: "+ counter + " Current Size:" + wagon.CurrentSize + " Max Size: " + wagon.MaxSize;
                 TrainList.Text += Environment.NewLine;
@@ -233,5 +91,7 @@ namespace Circustrein
                 counter++;
             }
         }
+
+
     }
 }
