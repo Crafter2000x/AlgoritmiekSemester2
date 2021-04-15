@@ -2,7 +2,7 @@
 
 namespace Circustrein.Classes
 {
-    class AnimalSorting
+    public class AnimalSorting
     {
         public List<Animal> Animals = new List<Animal>();
         public List<Wagon> Train = new List<Wagon>();
