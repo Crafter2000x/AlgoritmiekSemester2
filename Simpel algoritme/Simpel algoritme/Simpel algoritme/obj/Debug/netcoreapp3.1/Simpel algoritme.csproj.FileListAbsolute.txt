@@ -1,0 +1,13 @@
+C:\Users\Connor\source\repos\Algoritmiek Semester 2\Simpel algoritme\Simpel algoritme\Simpel algoritme\bin\Debug\netcoreapp3.1\Simpel algoritme.exe
+C:\Users\Connor\source\repos\Algoritmiek Semester 2\Simpel algoritme\Simpel algoritme\Simpel algoritme\bin\Debug\netcoreapp3.1\Simpel algoritme.deps.json
+C:\Users\Connor\source\repos\Algoritmiek Semester 2\Simpel algoritme\Simpel algoritme\Simpel algoritme\bin\Debug\netcoreapp3.1\Simpel algoritme.runtimeconfig.json
+C:\Users\Connor\source\repos\Algoritmiek Semester 2\Simpel algoritme\Simpel algoritme\Simpel algoritme\bin\Debug\netcoreapp3.1\Simpel algoritme.runtimeconfig.dev.json
+C:\Users\Connor\source\repos\Algoritmiek Semester 2\Simpel algoritme\Simpel algoritme\Simpel algoritme\bin\Debug\netcoreapp3.1\Simpel algoritme.dll
+C:\Users\Connor\source\repos\Algoritmiek Semester 2\Simpel algoritme\Simpel algoritme\Simpel algoritme\bin\Debug\netcoreapp3.1\Simpel algoritme.pdb
+C:\Users\Connor\source\repos\Algoritmiek Semester 2\Simpel algoritme\Simpel algoritme\Simpel algoritme\obj\Debug\netcoreapp3.1\Simpel algoritme.csprojAssemblyReference.cache
+C:\Users\Connor\source\repos\Algoritmiek Semester 2\Simpel algoritme\Simpel algoritme\Simpel algoritme\obj\Debug\netcoreapp3.1\Simpel algoritme.AssemblyInfoInputs.cache
+C:\Users\Connor\source\repos\Algoritmiek Semester 2\Simpel algoritme\Simpel algoritme\Simpel algoritme\obj\Debug\netcoreapp3.1\Simpel algoritme.AssemblyInfo.cs
+C:\Users\Connor\source\repos\Algoritmiek Semester 2\Simpel algoritme\Simpel algoritme\Simpel algoritme\obj\Debug\netcoreapp3.1\Simpel algoritme.csproj.CoreCompileInputs.cache
+C:\Users\Connor\source\repos\Algoritmiek Semester 2\Simpel algoritme\Simpel algoritme\Simpel algoritme\obj\Debug\netcoreapp3.1\Simpel algoritme.dll
+C:\Users\Connor\source\repos\Algoritmiek Semester 2\Simpel algoritme\Simpel algoritme\Simpel algoritme\obj\Debug\netcoreapp3.1\Simpel algoritme.pdb
+C:\Users\Connor\source\repos\Algoritmiek Semester 2\Simpel algoritme\Simpel algoritme\Simpel algoritme\obj\Debug\netcoreapp3.1\Simpel algoritme.genruntimeconfig.cache
