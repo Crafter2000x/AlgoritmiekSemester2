@@ -1,7 +1,7 @@
 ﻿
 namespace Simpel_algoritme.Classes
 {
-    class Product
+    public class Product
     {
         public string Name { get; set; }
         public double Price { get; set; }

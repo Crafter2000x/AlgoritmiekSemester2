@@ -4,9 +4,10 @@ using System.Text;
 
 namespace Simpel_algoritme.Classes
 {
-    class Order
+    public class Order
     {
         public List<Product> ProductsInOrder = new List<Product>();
+
         public double GiveMaximumPrice() 
         {
             if (ProductsInOrder.Count == 0)
