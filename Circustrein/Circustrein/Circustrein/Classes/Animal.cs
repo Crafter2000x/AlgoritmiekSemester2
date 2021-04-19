@@ -14,8 +14,8 @@ namespace Circustrein.Classes
         public enum SizeTypes
         {
             Small = 1,
-            Medium = 2,
-            Large = 3
+            Medium = 3,
+            Large = 5
         }
 
         public string Name { get; set; }
@@ -24,25 +24,6 @@ namespace Circustrein.Classes
         
         public SizeTypes Size { get; set; }
 
-        public int Space { get; set;}
-
-        public void SpaceAssign() 
-        {
-            switch (Size)
-            {
-                case SizeTypes.Small:
-                    Space = 1;
-                    break;
-
-                case SizeTypes.Medium:
-                    Space = 3;
-                    break;
-
-                case SizeTypes.Large:
-                    Space = 5;
-                    break;
-            }
-        }
 
     }
 }

@@ -70,7 +70,6 @@ namespace Circustrein
                 Size = GetSize()
 
             });
-            AnimalSorting.Animals[AnimalSorting.Animals.Count - 1].SpaceAssign();
             ListViewAnimal.Items.Add(AnimalSorting.Animals[AnimalSorting.Animals.Count - 1].Name);
         }
 
