@@ -23,10 +23,11 @@ namespace Circustrein.Classes
                     Train.Add(new Wagon());
 
                     // Add animal to new wagon
-                    Train[0].AddAnimalToCart(animal);
-
-                    // Endpoint
-                    continue;
+                    if (Train[0].AddAnimalToCart(animal))
+                    {
+                        // Endpoint
+                        continue;
+                    }
                 }
 
                 foreach (Wagon wagon in Train)
@@ -44,11 +45,11 @@ namespace Circustrein.Classes
                                 if (!wagon.DoesCartHaveEqualOrBiggerMeat(animal))
                                 {
                                     // Add animal to selected wagon
-                                    wagon.AddAnimalToCart(animal);
-
-                                    // Endpoint
-                                    break;
-
+                                    if (wagon.AddAnimalToCart(animal))
+                                    {
+                                        // Endpoint
+                                        break;
+                                    }
                                 }
 
                                 // Any wagons left?
@@ -58,10 +59,11 @@ namespace Circustrein.Classes
                                     Train.Add(new Wagon());
 
                                     // Add animal to new wagon
-                                    Train[Train.Count - 1].AddAnimalToCart(animal);
-
-                                    // Endpoint
-                                    break;
+                                    if (Train[Train.Count - 1].AddAnimalToCart(animal))
+                                    {
+                                        // Endpoint
+                                        break;
+                                    } 
                                 }
                                 else
                                 {
@@ -78,10 +80,11 @@ namespace Circustrein.Classes
                                 Train.Add(new Wagon());
 
                                 // Add animal to new wagon
-                                Train[Train.Count - 1].AddAnimalToCart(animal);
-
-                                // Endpoint
-                                break;
+                                if (Train[Train.Count - 1].AddAnimalToCart(animal))
+                                {
+                                    // Endpoint
+                                    break;
+                                }
                             }
                             else
                             {
@@ -96,10 +99,13 @@ namespace Circustrein.Classes
                         if (!wagon.DoesCartHaveEqualOrBiggerMeat(animal))
                         {
                             // Add animal to selected wagon
-                            wagon.AddAnimalToCart(animal);
+                            if (wagon.AddAnimalToCart(animal))
+                            {
+                                // Endpoint
+                                break;
+                            }
 
-                            // Endpoint
-                            break;
+                            
                         }
 
                     }
@@ -111,10 +117,11 @@ namespace Circustrein.Classes
                         Train.Add(new Wagon());
 
                         // Add animal to new wagon
-                        Train[Train.Count - 1].AddAnimalToCart(animal);
-
-                        // Endpoint
-                        break;
+                        if (Train[Train.Count - 1].AddAnimalToCart(animal))
+                        {
+                            // Endpoint
+                            break;
+                        }
                     }
                     else
                     {

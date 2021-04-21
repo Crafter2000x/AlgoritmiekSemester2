@@ -130,7 +130,7 @@ namespace Circustrein.UnitTests
         }
 
         [TestMethod]
-        public void AddAnimalToCart_CartHasZero_CartWillHaveOne()
+        public void AddAnimalToCart_CartCanAdd_ReturnTrue()
         {
             // Arrange
             Wagon wagon = new Wagon();
@@ -139,18 +139,30 @@ namespace Circustrein.UnitTests
 
             // Act
 
-            wagon.AddAnimalToCart(animal);
+            var result = wagon.AddAnimalToCart(animal);
 
             // Assert
 
-            bool result = false;
-
-            if (wagon.StoredAnimals.Count == 1)
-            {
-                result = true;
-            }
-
             Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void AddAnimalToCart_CartCantAdd_ReturnFalse()
+        {
+            // Arrange
+            Wagon wagon = new Wagon();
+
+            Animal animal = new Animal { Name = "Cow", Size = Animal.SizeTypes.Medium, Diet = Animal.DietTypes.Herbivore };
+
+            wagon.CurrentSize = 8;
+
+            // Act
+
+            var result = wagon.AddAnimalToCart(animal);
+
+            // Assert
+
+            Assert.IsFalse(result);
         }
     }
 }

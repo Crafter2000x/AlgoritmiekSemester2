@@ -49,10 +49,15 @@ namespace Circustrein.Classes
             return false;
         }
 
-        public void AddAnimalToCart(Animal animal) 
+        public bool AddAnimalToCart(Animal animal) 
         {
-            StoredAnimals.Add(animal);
-            CurrentSize += (int)animal.Size;       
+            if (DoesAnimalFit(animal) == true)
+            {
+                StoredAnimals.Add(animal);
+                CurrentSize += (int)animal.Size;
+                return true;
+            }
+            return false;
         }
 
         public Wagon() 
