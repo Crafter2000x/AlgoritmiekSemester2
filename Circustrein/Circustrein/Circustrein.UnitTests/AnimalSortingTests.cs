@@ -76,5 +76,35 @@ namespace Circustrein.UnitTests
             // Assert
             Assert.IsFalse(result);
         }
+
+        [TestMethod]
+        public void AnimalSorting_config1_2Wagons()
+        {
+            // Arrange
+            var animalsorting = new AnimalSorting();
+
+            animalsorting.Animals.Add(new Animal { Name = "H1", Size = Animal.SizeTypes.Small, Diet = Animal.DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H1", Size = Animal.SizeTypes.Small, Diet = Animal.DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H1", Size = Animal.SizeTypes.Small, Diet = Animal.DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H1", Size = Animal.SizeTypes.Small, Diet = Animal.DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H1", Size = Animal.SizeTypes.Small, Diet = Animal.DietTypes.Herbivore });
+
+            animalsorting.Animals.Add(new Animal { Name = "H3", Size = Animal.SizeTypes.Medium, Diet = Animal.DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H3", Size = Animal.SizeTypes.Medium, Diet = Animal.DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H3", Size = Animal.SizeTypes.Medium, Diet = Animal.DietTypes.Herbivore });
+
+            animalsorting.Animals.Add(new Animal { Name = "H1", Size = Animal.SizeTypes.Large, Diet = Animal.DietTypes.Herbivore });
+
+            // Act
+            animalsorting.OrderIntoCarts();
+
+            // Assert
+            bool lenghtcheck = false;
+            if (animalsorting.Train.Count == 2)
+            {
+                lenghtcheck = true;
+            }
+            Assert.IsTrue(lenghtcheck);
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Circustrein.Classes
 {
@@ -7,14 +8,19 @@ namespace Circustrein.Classes
         public List<Animal> Animals = new List<Animal>();
         public List<Wagon> Train = new List<Wagon>();
 
-
         public void OrderIntoCarts()
         {
             Train.Clear();
-            Animals.Sort((x, y) => x.Size.CompareTo(y.Size));
+
+            //Custom sort with linq
+            IEnumerable<Animal> query = Animals.OrderBy(s => s.Diet).ThenBy(s =>
+            s.Size == Animal.SizeTypes.Medium ? 1: 
+            s.Size == Animal.SizeTypes.Large ? 2:
+            s.Size == Animal.SizeTypes.Small ? 3:
+            4);
 
 
-            foreach (Animal animal in Animals)
+            foreach (Animal animal in query)
             {
                 // Are there any wagons?
                 if (Train.Count == 0)
