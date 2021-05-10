@@ -14,9 +14,9 @@ namespace Circustrein.Classes
 
             //Custom sort with linq
             IEnumerable<Animal> query = Animals.OrderBy(s => s.Diet).ThenBy(s =>
-            s.Size == Animal.SizeTypes.Medium ? 1: 
-            s.Size == Animal.SizeTypes.Large ? 2:
-            s.Size == Animal.SizeTypes.Small ? 3:
+            s.Size == SizeTypes.Medium ? 1: 
+            s.Size == SizeTypes.Large ? 2:
+            s.Size == SizeTypes.Small ? 3:
             4);
 
 
@@ -42,7 +42,7 @@ namespace Circustrein.Classes
                     if (wagon.DoesAnimalFit(animal))
                     {
                         // Is this animal a meat eater?
-                        if (animal.Diet == Animal.DietTypes.Carnivore)
+                        if (animal.Diet == DietTypes.Carnivore)
                         {
                             // Does this wagon have a animal equal or smaller?
                             if (!wagon.DoesCartHaveEqualOrSmaller(animal))

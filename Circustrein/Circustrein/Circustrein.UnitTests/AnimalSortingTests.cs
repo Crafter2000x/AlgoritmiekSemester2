@@ -1,6 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Circustrein.Classes;
-using System.Collections.Generic;
 
 namespace Circustrein.UnitTests
 {
@@ -15,18 +14,18 @@ namespace Circustrein.UnitTests
             for (int i = 0; i < 6; i++)
             {
                 // Add small meat animal
-                animalsorting.Animals.Add(new Animal { Name = "MS", Diet = Animal.DietTypes.Carnivore, Size = Animal.SizeTypes.Small });
+                animalsorting.Animals.Add(new Animal { Name = "MS", Diet = DietTypes.Carnivore, Size = SizeTypes.Small });
                 // Add medium meat animal
-                animalsorting.Animals.Add(new Animal { Name = "MM", Diet = Animal.DietTypes.Carnivore, Size = Animal.SizeTypes.Medium });
+                animalsorting.Animals.Add(new Animal { Name = "MM", Diet = DietTypes.Carnivore, Size = SizeTypes.Medium });
                 // Add large meat animal
-                animalsorting.Animals.Add(new Animal { Name = "ML", Diet = Animal.DietTypes.Carnivore, Size = Animal.SizeTypes.Large });
+                animalsorting.Animals.Add(new Animal { Name = "ML", Diet = DietTypes.Carnivore, Size = SizeTypes.Large });
 
                 // Add small plant animal
-                animalsorting.Animals.Add(new Animal { Name = "PS", Diet = Animal.DietTypes.Herbivore, Size = Animal.SizeTypes.Small });
+                animalsorting.Animals.Add(new Animal { Name = "PS", Diet = DietTypes.Herbivore, Size = SizeTypes.Small });
                 // Add medium plant animal
-                animalsorting.Animals.Add(new Animal { Name = "PM", Diet = Animal.DietTypes.Herbivore, Size = Animal.SizeTypes.Medium });
+                animalsorting.Animals.Add(new Animal { Name = "PM", Diet = DietTypes.Herbivore, Size = SizeTypes.Medium });
                 // Add large plant animal
-                animalsorting.Animals.Add(new Animal { Name = "PL", Diet = Animal.DietTypes.Herbivore, Size = Animal.SizeTypes.Large });
+                animalsorting.Animals.Add(new Animal { Name = "PL", Diet = DietTypes.Herbivore, Size = SizeTypes.Large });
             }
             // Act
             animalsorting.OrderIntoCarts();
@@ -83,17 +82,17 @@ namespace Circustrein.UnitTests
             // Arrange
             var animalsorting = new AnimalSorting();
 
-            animalsorting.Animals.Add(new Animal { Name = "H1", Size = Animal.SizeTypes.Small, Diet = Animal.DietTypes.Herbivore });
-            animalsorting.Animals.Add(new Animal { Name = "H1", Size = Animal.SizeTypes.Small, Diet = Animal.DietTypes.Herbivore });
-            animalsorting.Animals.Add(new Animal { Name = "H1", Size = Animal.SizeTypes.Small, Diet = Animal.DietTypes.Herbivore });
-            animalsorting.Animals.Add(new Animal { Name = "H1", Size = Animal.SizeTypes.Small, Diet = Animal.DietTypes.Herbivore });
-            animalsorting.Animals.Add(new Animal { Name = "H1", Size = Animal.SizeTypes.Small, Diet = Animal.DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H1", Size = SizeTypes.Small, Diet = DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H1", Size = SizeTypes.Small, Diet = DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H1", Size = SizeTypes.Small, Diet = DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H1", Size = SizeTypes.Small, Diet = DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H1", Size = SizeTypes.Small, Diet = DietTypes.Herbivore });
 
-            animalsorting.Animals.Add(new Animal { Name = "H3", Size = Animal.SizeTypes.Medium, Diet = Animal.DietTypes.Herbivore });
-            animalsorting.Animals.Add(new Animal { Name = "H3", Size = Animal.SizeTypes.Medium, Diet = Animal.DietTypes.Herbivore });
-            animalsorting.Animals.Add(new Animal { Name = "H3", Size = Animal.SizeTypes.Medium, Diet = Animal.DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H3", Size = SizeTypes.Medium, Diet = DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H3", Size = SizeTypes.Medium, Diet = DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H3", Size = SizeTypes.Medium, Diet = DietTypes.Herbivore });
 
-            animalsorting.Animals.Add(new Animal { Name = "H1", Size = Animal.SizeTypes.Large, Diet = Animal.DietTypes.Herbivore });
+            animalsorting.Animals.Add(new Animal { Name = "H1", Size = SizeTypes.Large, Diet = DietTypes.Herbivore });
 
             // Act
             animalsorting.OrderIntoCarts();

@@ -12,7 +12,7 @@ namespace Circustrein.UnitTests
             // Arrange
             Wagon wagon = new Wagon();
 
-            Animal animal = new Animal {Name = "Monkey", Size = Animal.SizeTypes.Large, Diet = Animal.DietTypes.Carnivore };
+            Animal animal = new Animal {Name = "Monkey", Size = SizeTypes.Large, Diet = DietTypes.Carnivore };
 
             // Act
             wagon.CurrentSize = 10;
@@ -31,7 +31,7 @@ namespace Circustrein.UnitTests
             // Arrange
             Wagon wagon = new Wagon();
 
-            Animal animal = new Animal { Name = "Monkey", Size = Animal.SizeTypes.Large, Diet = Animal.DietTypes.Carnivore };
+            Animal animal = new Animal { Name = "Monkey", Size = SizeTypes.Large, Diet = DietTypes.Carnivore };
 
             // Act
 
@@ -49,8 +49,8 @@ namespace Circustrein.UnitTests
             // Arrange
             Wagon wagon = new Wagon();
 
-            Animal animal = new Animal { Name = "Monkey", Size = Animal.SizeTypes.Large, Diet = Animal.DietTypes.Carnivore };
-            Animal animal1 = new Animal { Name = "Deer", Size = Animal.SizeTypes.Medium, Diet = Animal.DietTypes.Herbivore };
+            Animal animal = new Animal { Name = "Monkey", Size = SizeTypes.Large, Diet = DietTypes.Carnivore };
+            Animal animal1 = new Animal { Name = "Deer", Size = SizeTypes.Medium, Diet = DietTypes.Herbivore };
 
 
             // Act
@@ -71,8 +71,8 @@ namespace Circustrein.UnitTests
             // Arrange
             Wagon wagon = new Wagon();
 
-            Animal animal = new Animal { Name = "Lizard", Size = Animal.SizeTypes.Medium, Diet = Animal.DietTypes.Carnivore };
-            Animal animal1 = new Animal { Name = "Zebra", Size = Animal.SizeTypes.Large, Diet = Animal.DietTypes.Herbivore };
+            Animal animal = new Animal { Name = "Lizard", Size = SizeTypes.Medium, Diet = DietTypes.Carnivore };
+            Animal animal1 = new Animal { Name = "Zebra", Size = SizeTypes.Large, Diet = DietTypes.Herbivore };
 
 
             // Act
@@ -93,8 +93,8 @@ namespace Circustrein.UnitTests
             // Arrange
             Wagon wagon = new Wagon();
 
-            Animal animal = new Animal { Name = "Cow", Size = Animal.SizeTypes.Medium, Diet = Animal.DietTypes.Herbivore };
-            Animal animal1 = new Animal { Name = "Dino", Size = Animal.SizeTypes.Large, Diet = Animal.DietTypes.Carnivore };
+            Animal animal = new Animal { Name = "Cow", Size = SizeTypes.Medium, Diet = DietTypes.Herbivore };
+            Animal animal1 = new Animal { Name = "Dino", Size = SizeTypes.Large, Diet = DietTypes.Carnivore };
 
 
             // Act
@@ -114,8 +114,8 @@ namespace Circustrein.UnitTests
             // Arrange
             Wagon wagon = new Wagon();
 
-            Animal animal = new Animal { Name = "Cow", Size = Animal.SizeTypes.Medium, Diet = Animal.DietTypes.Herbivore };
-            Animal animal1 = new Animal { Name = "Dino", Size = Animal.SizeTypes.Large, Diet = Animal.DietTypes.Herbivore };
+            Animal animal = new Animal { Name = "Cow", Size = SizeTypes.Medium, Diet = DietTypes.Herbivore };
+            Animal animal1 = new Animal { Name = "Dino", Size = SizeTypes.Large, Diet = DietTypes.Herbivore };
 
 
             // Act
@@ -135,7 +135,7 @@ namespace Circustrein.UnitTests
             // Arrange
             Wagon wagon = new Wagon();
 
-            Animal animal = new Animal { Name = "Cow", Size = Animal.SizeTypes.Medium, Diet = Animal.DietTypes.Herbivore };
+            Animal animal = new Animal { Name = "Cow", Size = SizeTypes.Medium, Diet = DietTypes.Herbivore };
 
             // Act
 
@@ -152,7 +152,7 @@ namespace Circustrein.UnitTests
             // Arrange
             Wagon wagon = new Wagon();
 
-            Animal animal = new Animal { Name = "Cow", Size = Animal.SizeTypes.Medium, Diet = Animal.DietTypes.Herbivore };
+            Animal animal = new Animal { Name = "Cow", Size = SizeTypes.Medium, Diet = DietTypes.Herbivore };
 
             wagon.CurrentSize = 8;
 

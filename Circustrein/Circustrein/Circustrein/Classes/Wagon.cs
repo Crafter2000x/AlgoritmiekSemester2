@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Circustrein.Classes
 {
@@ -40,7 +38,7 @@ namespace Circustrein.Classes
         {
             foreach (Animal Animal in StoredAnimals)
             {
-                if ((int)Animal.Size >= (int)animal.Size && Animal.Diet == Animal.DietTypes.Carnivore)
+                if ((int)Animal.Size >= (int)animal.Size && Animal.Diet == DietTypes.Carnivore)
                 {
                     return true;
                 }

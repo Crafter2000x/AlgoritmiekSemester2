@@ -33,31 +33,31 @@ namespace Circustrein
             ListViewAnimal.Clear();
         }
 
-        private Animal.DietTypes GetDiet() 
+        private DietTypes GetDiet() 
         {
             if (DietMeat.Checked)
             {
-                return Animal.DietTypes.Carnivore;
+                return DietTypes.Carnivore;
             }
             else
             {
-                return Animal.DietTypes.Herbivore;
+                return DietTypes.Herbivore;
             }
         }
 
-        private Animal.SizeTypes GetSize()
+        private SizeTypes GetSize()
         {
             if (SizeSmall.Checked)
             {
-                return Animal.SizeTypes.Small;
+                return SizeTypes.Small;
             }
             else if (SizeMedium.Checked)
             {
-                return Animal.SizeTypes.Medium;
+                return SizeTypes.Medium;
             }
             else
             {
-                return Animal.SizeTypes.Large;   
+                return SizeTypes.Large;   
             }
         }
 

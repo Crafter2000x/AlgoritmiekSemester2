@@ -12,7 +12,8 @@ namespace Containervervoer.Classes
 
         public int CurrentContainer { get; set; }
 
-        public int MaximumStack { get; set; }
+        //0 = left 1 = middle 2 = right
+        public int ShipZone { get; set; }
 
         public List<Container> Containers = new List<Container>();
     }
