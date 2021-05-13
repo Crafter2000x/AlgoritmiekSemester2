@@ -6,7 +6,12 @@ namespace Simpel_algoritme.Classes
 {
     public class Order
     {
-        public List<Product> ProductsInOrder = new List<Product>();
+        private List<Product> ProductsInOrder = new List<Product>();
+
+        public void AddToOrder(Product product) 
+        {
+            ProductsInOrder.Add(product);
+        }
 
         public double GiveMaximumPrice() 
         {

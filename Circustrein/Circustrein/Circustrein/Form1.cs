@@ -6,7 +6,7 @@ namespace Circustrein
 {
     public partial class Circustrein : Form
     {
-        AnimalSorting AnimalSorting = new AnimalSorting();
+        private AnimalSorting AnimalSorting = new AnimalSorting();
 
         public Circustrein()
         {
@@ -27,8 +27,7 @@ namespace Circustrein
 
         private void ClearAll_Click(object sender, EventArgs e)
         {
-            AnimalSorting.Animals.Clear();
-            AnimalSorting.Train.Clear();
+            AnimalSorting.ClearList();
             TrainList.Clear();
             ListViewAnimal.Clear();
         }
@@ -63,24 +62,24 @@ namespace Circustrein
 
         private void AddAnimalToList()
         {
-            AnimalSorting.Animals.Add(new Animal
+            AnimalSorting.AddToAnimals(new Animal
             {
                 Name = AnimailAddName.Text,
                 Diet = GetDiet(),
                 Size = GetSize()
 
             });
-            ListViewAnimal.Items.Add(AnimalSorting.Animals[AnimalSorting.Animals.Count - 1].Name);
+            ListViewAnimal.Items.Add(AnimailAddName.Text);
         }
 
         private void DisplayTrain() 
         {
             int counter = 1;
-            foreach (Wagon wagon in AnimalSorting.Train)
+            foreach (Wagon wagon in AnimalSorting.GiveTrainList())
             {
                 TrainList.Text += "Wagon: "+ counter + " Current Size:" + wagon.CurrentSize + " Max Size: " + wagon.MaxSize;
                 TrainList.Text += Environment.NewLine;
-                foreach (Animal animal in wagon.StoredAnimals)
+                foreach (Animal animal in wagon.AnimalsInCart())
                 {
                     TrainList.Text += "Name: " + animal.Name + " Size: " + animal.Size.ToString() + " Diet: " + animal.Diet.ToString();
                     TrainList.Text += Environment.NewLine;

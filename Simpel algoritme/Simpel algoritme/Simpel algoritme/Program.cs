@@ -94,7 +94,7 @@ namespace Simpel_algoritme
             {
                 Console.Clear();
                 Console.WriteLine("Order: ");
-                foreach (Product product in Order.ProductsInOrder)
+                foreach (Product product in Order.GetAllProducts(0))
                 {
                     Console.WriteLine(product.ToString());
                 }
@@ -117,7 +117,7 @@ namespace Simpel_algoritme
                         product.Name = Console.ReadLine();
                         Console.WriteLine("What is the product price:");
                         product.Price = Convert.ToDouble(Console.ReadLine());
-                        Order.ProductsInOrder.Add(product);
+                        Order.AddToOrder(product);
                         break;
 
                     case ConsoleKey.D2:

@@ -54,7 +54,7 @@ namespace Circustrein.UnitTests
 
 
             // Act
-            wagon.StoredAnimals.Add(animal1);
+            wagon.AddAnimalToCart(animal1);
             wagon.CurrentSize += (int)animal1.Size;
 
             var result = wagon.DoesCartHaveEqualOrSmaller(animal);
@@ -76,7 +76,7 @@ namespace Circustrein.UnitTests
 
 
             // Act
-            wagon.StoredAnimals.Add(animal1);
+            wagon.AddAnimalToCart(animal1);
             wagon.CurrentSize += (int)animal1.Size;
 
             var result = wagon.DoesCartHaveEqualOrSmaller(animal);
@@ -98,7 +98,7 @@ namespace Circustrein.UnitTests
 
 
             // Act
-            wagon.StoredAnimals.Add(animal1);
+            wagon.AddAnimalToCart(animal1);
             wagon.CurrentSize += (int)animal1.Size;
 
             var result = wagon.DoesCartHaveEqualOrBiggerMeat(animal);
@@ -119,7 +119,7 @@ namespace Circustrein.UnitTests
 
 
             // Act
-            wagon.StoredAnimals.Add(animal1);
+            wagon.AddAnimalToCart(animal1);
             wagon.CurrentSize += (int)animal1.Size;
 
             var result = wagon.DoesCartHaveEqualOrBiggerMeat(animal);

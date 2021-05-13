@@ -4,10 +4,9 @@ namespace Circustrein.Classes
 {
     public class Wagon
     {
-        public List<Animal> StoredAnimals = new List<Animal>();
-
         public int MaxSize { get; }
         public int CurrentSize { get; set; }
+        private List<Animal> StoredAnimals = new List<Animal>();
 
         public bool DoesAnimalFit(Animal animal)
         {
@@ -56,6 +55,11 @@ namespace Circustrein.Classes
                 return true;
             }
             return false;
+        }
+
+        public List<Animal> AnimalsInCart() 
+        {
+            return StoredAnimals;
         }
 
         public Wagon() 

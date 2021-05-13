@@ -5,8 +5,8 @@ namespace Circustrein.Classes
 {
     public class AnimalSorting
     {
-        public List<Animal> Animals = new List<Animal>();
-        public List<Wagon> Train = new List<Wagon>();
+        private List<Animal> Animals = new List<Animal>();
+        private List<Wagon> Train = new List<Wagon>();
 
         public void OrderIntoCarts()
         {
@@ -152,6 +152,27 @@ namespace Circustrein.Classes
 
             return true;
 
+        }
+
+        public void ClearList() 
+        {
+            Animals.Clear();
+            Train.Clear();
+        }
+
+        public void AddWagon(Wagon wagon) 
+        {
+            Train.Add(wagon);
+        }
+
+        public void AddToAnimals(Animal animal) 
+        {
+            Animals.Add(animal);
+        }
+
+        public List<Wagon> GiveTrainList() 
+        {
+            return Train;
         }
     }
 }

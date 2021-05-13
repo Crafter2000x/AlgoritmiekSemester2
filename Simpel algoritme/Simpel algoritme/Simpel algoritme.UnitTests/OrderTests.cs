@@ -35,11 +35,11 @@ namespace Simpel_algoritme.UnitTests
         {
             // Arrange
             var order = new Order();
-            order.ProductsInOrder.Add(new Product { Name = "1euro", Price = 1 });
-            order.ProductsInOrder.Add(new Product { Name = "2euro", Price = 2 });
-            order.ProductsInOrder.Add(new Product { Name = "4euro", Price = 4 });
-            order.ProductsInOrder.Add(new Product { Name = "6euro", Price = 6 });
-            order.ProductsInOrder.Add(new Product { Name = "10euro", Price = 10 });
+            order.AddToOrder(new Product { Name = "1euro", Price = 1 });
+            order.AddToOrder(new Product { Name = "2euro", Price = 2 });
+            order.AddToOrder(new Product { Name = "4euro", Price = 4 });
+            order.AddToOrder(new Product { Name = "6euro", Price = 6 });
+            order.AddToOrder(new Product { Name = "10euro", Price = 10 });
 
             // Act
             var result = order.GiveMaximumPrice();
@@ -88,11 +88,11 @@ namespace Simpel_algoritme.UnitTests
         {
             // Arrange
             var order = new Order();
-            order.ProductsInOrder.Add(new Product { Name = "1euro", Price = 1 });
-            order.ProductsInOrder.Add(new Product { Name = "2euro", Price = 2 });
-            order.ProductsInOrder.Add(new Product { Name = "4euro", Price = 4 });
-            order.ProductsInOrder.Add(new Product { Name = "6euro", Price = 6 });
-            order.ProductsInOrder.Add(new Product { Name = "10euro", Price = 10 });
+            order.AddToOrder(new Product { Name = "1euro", Price = 1 });
+            order.AddToOrder(new Product { Name = "2euro", Price = 2 });
+            order.AddToOrder(new Product { Name = "4euro", Price = 4 });
+            order.AddToOrder(new Product { Name = "6euro", Price = 6 });
+            order.AddToOrder(new Product { Name = "10euro", Price = 10 });
 
             // Act
             var result = order.GiveAveragePrice();
@@ -117,11 +117,11 @@ namespace Simpel_algoritme.UnitTests
         {
             // Arrange
             var order = new Order();
-            order.ProductsInOrder.Add(new Product { Name = "1euro", Price = 1 });
-            order.ProductsInOrder.Add(new Product { Name = "2euro", Price = 2 });
-            order.ProductsInOrder.Add(new Product { Name = "4euro", Price = 4 });
-            order.ProductsInOrder.Add(new Product { Name = "6euro", Price = 6 });
-            order.ProductsInOrder.Add(new Product { Name = "10euro", Price = 10 });
+            order.AddToOrder(new Product { Name = "1euro", Price = 1 });
+            order.AddToOrder(new Product { Name = "2euro", Price = 2 });
+            order.AddToOrder(new Product { Name = "4euro", Price = 4 });
+            order.AddToOrder(new Product { Name = "6euro", Price = 6 });
+            order.AddToOrder(new Product { Name = "10euro", Price = 10 });
 
             // Act
             var result = order.GetAllProducts(3);
@@ -147,23 +147,23 @@ namespace Simpel_algoritme.UnitTests
 
             // Arrange
             var order = new Order();
-            order.ProductsInOrder.Add(new Product { Name = "12,50euro", Price = 12.5 });
-            order.ProductsInOrder.Add(new Product { Name = "14,50euro", Price = 14.5 });
-            order.ProductsInOrder.Add(new Product { Name = "15euro", Price = 15 });
-            order.ProductsInOrder.Add(new Product { Name = "20euro", Price = 20 });
-            order.ProductsInOrder.Add(new Product { Name = "0.50euro", Price = 0.5 });
+            order.AddToOrder(new Product { Name = "12,50euro", Price = 12.5 });
+            order.AddToOrder(new Product { Name = "14,50euro", Price = 14.5 });
+            order.AddToOrder(new Product { Name = "15euro", Price = 15 });
+            order.AddToOrder(new Product { Name = "20euro", Price = 20 });
+            order.AddToOrder(new Product { Name = "0.50euro", Price = 0.5 });
 
-            order.ProductsInOrder.Add(new Product { Name = "1euro", Price = 1 });
-            order.ProductsInOrder.Add(new Product { Name = "2euro", Price = 2 });
-            order.ProductsInOrder.Add(new Product { Name = "4euro", Price = 4 });
-            order.ProductsInOrder.Add(new Product { Name = "6euro", Price = 6 });
-            order.ProductsInOrder.Add(new Product { Name = "10euro", Price = 10 });
+            order.AddToOrder(new Product { Name = "1euro", Price = 1 });
+            order.AddToOrder(new Product { Name = "2euro", Price = 2 });
+            order.AddToOrder(new Product { Name = "4euro", Price = 4 });
+            order.AddToOrder(new Product { Name = "6euro", Price = 6 });
+            order.AddToOrder(new Product { Name = "10euro", Price = 10 });
 
-            var compare = order.ProductsInOrder;
+            var compare = order.GetAllProducts(0);
 
             // Act
             order.SortProductsByPrice();
-            var result = order.ProductsInOrder;
+            var result = order.GetAllProducts(0);
             compare.Sort((x, y) => x.Price.CompareTo(y.Price));
 
             // Assert
