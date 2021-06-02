@@ -38,108 +38,31 @@ namespace Circustrein.Classes
 
                 foreach (Wagon wagon in Train)
                 {
-                    // Does the animal fit?
-                    if (wagon.DoesAnimalFit(animal))
+                    if (wagon.DoesAnimalFit(animal) == true && animal.Diet == DietTypes.Carnivore)
                     {
-                        // Is this animal a meat eater?
-                        if (animal.Diet == DietTypes.Carnivore)
+                        if (wagon.DoesCartHaveEqualOrSmaller(animal) == false && wagon.DoesCartHaveEqualOrBiggerMeat(animal) == false)
                         {
-                            // Does this wagon have a animal equal or smaller?
-                            if (!wagon.DoesCartHaveEqualOrSmaller(animal))
-                            {
-                                // Does this wagon have a animal bigger or equal that eats meat?
-                                if (!wagon.DoesCartHaveEqualOrBiggerMeat(animal))
-                                {
-                                    // Add animal to selected wagon
-                                    if (wagon.AddAnimalToCart(animal))
-                                    {
-                                        // Endpoint
-                                        break;
-                                    }
-                                }
-
-                                // Any wagons left?
-                                if (!AnyWagonsLeft(wagon))
-                                {
-                                    // Add new wagon
-                                    Train.Add(new Wagon());
-
-                                    // Add animal to new wagon
-                                    if (Train[Train.Count - 1].AddAnimalToCart(animal))
-                                    {
-                                        // Endpoint
-                                        break;
-                                    } 
-                                }
-                                else
-                                {
-                                    // Select next wagon
-                                    continue;
-
-                                }
-                            }
-
-                            // Any wagons left?
-                            if (!AnyWagonsLeft(wagon))
-                            {
-                                // Add new wagon
-                                Train.Add(new Wagon());
-
-                                // Add animal to new wagon
-                                if (Train[Train.Count - 1].AddAnimalToCart(animal))
-                                {
-                                    // Endpoint
-                                    break;
-                                }
-                            }
-                            else
-                            {
-                                // Select next wagon
-                                continue;
-
-                            }
-
-                        }
-
-                        // Does this wagon have a animal bigger or equal that eats meat?
-                        if (!wagon.DoesCartHaveEqualOrBiggerMeat(animal))
-                        {
-                            // Add animal to selected wagon
-                            if (wagon.AddAnimalToCart(animal))
-                            {
-                                // Endpoint
-                                break;
-                            }
-
-                            
+                            wagon.AddAnimalToCart(animal);
+                            break;
                         }
 
                     }
 
-                    // Any wagons left?
-                    if (!AnyWagonsLeft(wagon))
+                    if (wagon.DoesAnimalFit(animal) == true && animal.Diet == DietTypes.Herbivore)
                     {
-                        // Add new wagon
-                        Train.Add(new Wagon());
-
-                        // Add animal to new wagon
-                        if (Train[Train.Count - 1].AddAnimalToCart(animal))
+                        if (wagon.DoesCartHaveEqualOrBiggerMeat(animal) == false)
                         {
-                            // Endpoint
+                            wagon.AddAnimalToCart(animal);
                             break;
                         }
                     }
-                    else
-                    {
-                        // Select next wagon
-                        continue;
 
+                    if (AnyWagonsLeft(wagon) == false)
+                    {
+                        Train.Add(new Wagon());
+                        if (Train[Train.Count - 1].AddAnimalToCart(animal)){break;}
                     }
                 }
-
-                // Endpoint
-                continue;
-
             }
         }
 
