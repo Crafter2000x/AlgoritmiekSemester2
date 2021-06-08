@@ -48,11 +48,24 @@ namespace Circustrein.Classes
 
         public bool AddAnimalToCart(Animal animal) 
         {
-            if (DoesAnimalFit(animal) == true)
+            if (DoesAnimalFit(animal) == true && animal.Diet == DietTypes.Carnivore)
             {
-                StoredAnimals.Add(animal);
-                CurrentSize += (int)animal.Size;
-                return true;
+                if (DoesCartHaveEqualOrSmaller(animal) == false && DoesCartHaveEqualOrBiggerMeat(animal) == false)
+                {
+                    StoredAnimals.Add(animal);
+                    CurrentSize += (int)animal.Size;
+                    return true;
+                }
+            }
+
+            if (DoesAnimalFit(animal) == true && animal.Diet == DietTypes.Herbivore)
+            {
+                if (DoesCartHaveEqualOrBiggerMeat(animal) == false)
+                {
+                    StoredAnimals.Add(animal);
+                    CurrentSize += (int)animal.Size;
+                    return true;
+                }
             }
             return false;
         }
